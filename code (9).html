@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Henzem | Seller RFQ Board</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#d3e4fe",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#763300",
+                    "inverse-on-surface": "#eaf1ff",
+                    "primary-fixed-dim": "#8bd6b6",
+                    "tertiary-fixed": "#ffdbca",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#f8f9ff",
+                    "tertiary-fixed-dim": "#ffb68e",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-secondary-fixed-variant": "#474646",
+                    "on-tertiary-fixed": "#331200",
+                    "surface-container-highest": "#d3e4fe",
+                    "primary-container": "#065f46",
+                    "surface-container-low": "#eff4ff",
+                    "tertiary": "#662b00",
+                    "surface-dim": "#cbdbf5",
+                    "outline": "#6f7973",
+                    "outline-variant": "#bec9c2",
+                    "inverse-surface": "#213145",
+                    "secondary": "#5f5e5e",
+                    "earth-depth": "#444C38",
+                    "on-background": "#0b1c30",
+                    "surface-tint": "#1b6b51",
+                    "on-secondary": "#ffffff",
+                    "background": "#f8f9ff",
+                    "primary-fixed": "#a6f2d1",
+                    "antique-base": "#FAEBD7",
+                    "danger-clay": "#FF5335",
+                    "amber-accent": "#F59E0B",
+                    "on-surface-variant": "#3f4944",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-primary-fixed": "#002116",
+                    "on-primary-container": "#8bd6b7",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#e2dfde",
+                    "on-primary-fixed-variant": "#00513b",
+                    "on-tertiary-container": "#ffb78f",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "surface-container": "#e5eeff",
+                    "verification-blue": "#7CC0D8",
+                    "on-secondary-container": "#636262",
+                    "emerald-glow": "#10B981",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#004532",
+                    "on-error": "#ffffff",
+                    "on-surface": "#0b1c30",
+                    "surface-container-high": "#dce9ff",
+                    "inverse-primary": "#8bd6b6",
+                    "tertiary-container": "#8a3c00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "stack-lg": "24px",
+                    "margin-desktop": "40px",
+                    "stack-md": "12px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "stack-sm": "4px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-item {
+            background-color: #065f46; /* primary-container match from JSON instruction */
+            color: #8bd6b7; /* on-primary-container */
+        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed-dim selection:text-on-primary-fixed overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline fixed top-0 w-full z-50 h-20 transition-all">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+<div class="flex items-center gap-8">
+<img alt="Henzem" class="h-10 w-auto object-contain" src="data:image/png;base64,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"/>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1" href="#">Marketplace</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Solutions</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Trade Finance</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Logistics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 rounded-xl text-primary font-label-md hover:bg-surface-container-low transition-all">Login</button>
+<button class="px-6 py-2 rounded-xl bg-primary text-on-primary font-label-md hover:opacity-90 shadow-sm transition-all">Get Started</button>
+</div>
+</div>
+</header>
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex flex-col h-screen fixed left-0 top-0 py-6 w-64 bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant dark:border-outline mt-20">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold">JD</div>
+<div>
+<p class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim">Exporters Hub</p>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                        Verified Member
+                    </p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1 overflow-y-auto scrollbar-hide">
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant/50 mx-2 px-4 py-3 rounded-xl flex items-center gap-3 transition-all font-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Overview
+            </a>
+<a class="bg-primary-container dark:bg-primary-container text-on-primary-container dark:text-on-primary-container rounded-xl mx-2 px-4 py-3 flex items-center gap-3 font-label-md shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="gavel" style="font-variation-settings: 'FILL' 1;">gavel</span>
+                RFQ Board
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant/50 mx-2 px-4 py-3 rounded-xl flex items-center gap-3 transition-all font-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+                Shipments
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant/50 mx-2 px-4 py-3 rounded-xl flex items-center gap-3 transition-all font-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                KYC Status
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant/50 mx-2 px-4 py-3 rounded-xl flex items-center gap-3 transition-all font-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                Analytics
+            </a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant/50 mx-2 px-4 py-3 rounded-xl flex items-center gap-3 transition-all font-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="px-2 mt-auto flex flex-col gap-1 border-t border-outline-variant pt-4">
+<a class="text-on-surface-variant hover:bg-surface-variant/50 px-4 py-3 rounded-xl flex items-center gap-3 font-label-md transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Support
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-variant/50 px-4 py-3 rounded-xl flex items-center gap-3 font-label-md transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="lg:ml-64 pt-20 min-h-screen px-4 md:px-margin-desktop py-margin-desktop">
+<!-- Header Section with Search & CTA -->
+<header class="mb-stack-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-gutter">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-2">Live RFQ Board</h1>
+<p class="font-body-md text-body-md text-secondary">Discover global demand for Indonesian agricultural commodities.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-emerald-glow transition-colors">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-xl focus:ring-2 focus:ring-emerald-glow/20 focus:border-emerald-glow outline-none min-w-[300px] transition-all font-body-sm" placeholder="Search RFQs (e.g. Organic Clove)" type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-xl flex items-center gap-2 font-label-md shadow-sm hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+                        Post New RFQ
+                    </button>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap gap-4 mt-8">
+<div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-outline-variant shadow-sm text-label-md text-secondary cursor-pointer hover:border-primary transition-all">
+<span>Commodity: All</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</div>
+<div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-outline-variant shadow-sm text-label-md text-secondary cursor-pointer hover:border-primary transition-all">
+<span>Target Region: All</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</div>
+<div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-outline-variant shadow-sm text-label-md text-secondary cursor-pointer hover:border-primary transition-all">
+<span>Price Range</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</div>
+<div class="ml-auto flex items-center gap-2 text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-emerald-glow"></span>
+                    84 Active RFQs currently live
+                </div>
+</div>
+</header>
+<!-- RFQ Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- RFQ Card 1 -->
+<div class="group bg-white rounded-xl border border-outline-variant shadow-sm hover:shadow-md hover:border-emerald-glow transition-all flex flex-col overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-primary/5 text-primary px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase">Spices &amp; Herbs</div>
+<span class="text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                            Ends in 3d 12h
+                        </span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">5 Tons Organic Clove - Target UAE</h3>
+<div class="space-y-3 mb-6">
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Quantity Required</span>
+<span class="font-semibold text-on-surface">5,000 kg</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Target Price (CIF)</span>
+<span class="font-semibold text-emerald-glow">$12.50 / kg</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Quality Grade</span>
+<span class="font-semibold text-on-surface">Grade A (Verified)</span>
+</div>
+</div>
+<div class="flex items-center gap-3 text-label-sm text-secondary bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-antique-base">
+<img alt="Buyer" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTa9ueF-zW3MsOjyQJyf56PImxDbnLZnv7iFWNYIwBoJJVFbcVeyJQcHAbGXvzSAYaBrc1_b7RT72zXRJss8Qk34Y4RhdDtGR45zldy5URApKxBABu5j-9dADixuwSxd3dDE8nNsYMYohQd9eSberhv_E5BJLWXXlwSAvgwwBMacmJjc5c49CMrLOHRorb1EvCFriDZP2RonRFYBl2s9nohzBcWA2HJ3zced_280I1l0T2IpTu7pFG4ZgMt9Y4SnJh3qAzfudUwHjX"/>
+</div>
+<div>
+<p class="font-semibold text-on-surface">Al-Dubai Trading Co.</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-emerald-glow" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Level 4 Buyer • 12 Deals Done</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto border-t border-outline-variant p-4 bg-surface-container-lowest flex items-center justify-between">
+<span class="text-label-sm text-secondary">24 Active Bids</span>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-md hover:bg-emerald-glow hover:text-white transition-all active:scale-95">Place Bid</button>
+</div>
+</div>
+<!-- RFQ Card 2 -->
+<div class="group bg-white rounded-xl border border-outline-variant shadow-sm hover:shadow-md hover:border-emerald-glow transition-all flex flex-col overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-amber-accent/10 text-amber-accent px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase">Coffee Beans</div>
+<span class="text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                            Ends in 5d 08h
+                        </span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">10 Tons Arabica Gayo - Japan Market</h3>
+<div class="space-y-3 mb-6">
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Quantity Required</span>
+<span class="font-semibold text-on-surface">10,000 kg</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Target Price (FOB)</span>
+<span class="font-semibold text-emerald-glow">$8.90 / kg</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Certifications</span>
+<span class="font-semibold text-on-surface">Fair Trade, Organic</span>
+</div>
+</div>
+<div class="flex items-center gap-3 text-label-sm text-secondary bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-antique-base">
+<img alt="Buyer" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaqy-otILns0dyL8f04WCNb4A0Fe8AnYC12GqrgV3729x5mX58PC2q3qZv0I2xaJdVXLN119AIOnpdhK6zRGGREsZTkC12LuRa6Q62_YncjtFgTH2ZRwcXJjU8T9lI6GQZftJjSrbV72tbmSynwZAm5H0-rCjM0tkbDZn1ddkl1VChrr764ChKn27ZthFGGuUEOpB43CmInBNRVYgZJTJXMP7MEW_R0xy8X3nlx6Wjpzw4ht8F7Wy4wYcF2nyAB54dhVH_edj-Z2U9"/>
+</div>
+<div>
+<p class="font-semibold text-on-surface">Kyoto Roast Masters</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-emerald-glow" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Verified Importer</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto border-t border-outline-variant p-4 bg-surface-container-lowest flex items-center justify-between">
+<span class="text-label-sm text-secondary">8 Active Bids</span>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-md hover:bg-emerald-glow hover:text-white transition-all active:scale-95">Place Bid</button>
+</div>
+</div>
+<!-- RFQ Card 3 -->
+<div class="group bg-white rounded-xl border border-outline-variant shadow-sm hover:shadow-md hover:border-emerald-glow transition-all flex flex-col overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-primary/5 text-primary px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase">Palm Oil</div>
+<span class="text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                            Ends in 24h
+                        </span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">Bulk Crude Palm Oil - Target Rotterdam</h3>
+<div class="space-y-3 mb-6">
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Quantity Required</span>
+<span class="font-semibold text-on-surface">500 Metric Tons</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Target Price</span>
+<span class="font-semibold text-emerald-glow">Negotiable</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Standard</span>
+<span class="font-semibold text-on-surface">RSPO Certified</span>
+</div>
+</div>
+<div class="flex items-center gap-3 text-label-sm text-secondary bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-antique-base">
+<img alt="Buyer" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7X-7UypXgeJMcMUOKtubSLlFeC_KkeTPm-kuuo4Kdki8LyyIlw0fUlrWb3MLq6yMh7ypSOpRIxGArksAosUXOGJXlhKLtqxRcuygtQSW64P9lyWWNiokUWnj5cWJW79EjsysMv7Vw6B8tb4KZgKC-uDizWpuA6c1Ojsih8-lbn-gvdb0zDt2gnREGvZKAX1UA2XK2tolKrQ5XDDO8OBRxvF0g4W3Kr1atSv2cISY7jt0IH4ZjK56Jgs8LAH9ghMtxuYPstLpFKUjU"/>
+</div>
+<div>
+<p class="font-semibold text-on-surface">EuroSupply Global</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-emerald-glow" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Multi-year Partner</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto border-t border-outline-variant p-4 bg-surface-container-lowest flex items-center justify-between">
+<span class="text-label-sm text-danger-clay font-semibold">High Demand • 42 Bids</span>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-md hover:bg-emerald-glow hover:text-white transition-all active:scale-95">Place Bid</button>
+</div>
+</div>
+<!-- RFQ Card 4 -->
+<div class="group bg-white rounded-xl border border-outline-variant shadow-sm hover:shadow-md hover:border-emerald-glow transition-all flex flex-col overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-primary/5 text-primary px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase">Fruit &amp; Vegetables</div>
+<span class="text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                            Ends in 7d 12h
+                        </span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">Fresh Mangosteen - Target South Korea</h3>
+<div class="space-y-3 mb-6">
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Quantity Required</span>
+<span class="font-semibold text-on-surface">2 Tons</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Target Price</span>
+<span class="font-semibold text-emerald-glow">$4.50 / kg</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Packaging</span>
+<span class="font-semibold text-on-surface">Cold Chain Storage Req.</span>
+</div>
+</div>
+<div class="flex items-center gap-3 text-label-sm text-secondary bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-antique-base">
+<img alt="Buyer" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwPVupeblmmL5C5rPkp8NlYHLkIr0Zf0s6uHp3p9rKANrVnVUTiOh4g7f6Mtfb_YT68YMw0r0f70ehW3xZmJSJhG9ddJ-l6wCa1UnnfUdUsQrqVwBM8B7E04wV3sPn02zCvTdGJs0v2uCzLsfdOO_1hIN8Nxai6BOXgM4NXkSaTr0LmNVepPXy3MWMjoAdvNFF0jh1Il1mpcqT5yKk8UfkdVuJB65lQyA16WLgotWtojGXBKosUMFDw7_ed0lV6BhRZ32s2O2Pf7Xb"/>
+</div>
+<div>
+<p class="font-semibold text-on-surface">Seoul Fresh Import</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-emerald-glow" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>High Completion Rate</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto border-t border-outline-variant p-4 bg-surface-container-lowest flex items-center justify-between">
+<span class="text-label-sm text-secondary">3 Active Bids</span>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-md hover:bg-emerald-glow hover:text-white transition-all active:scale-95">Place Bid</button>
+</div>
+</div>
+<!-- RFQ Card 5 -->
+<div class="group bg-white rounded-xl border border-outline-variant shadow-sm hover:shadow-md hover:border-emerald-glow transition-all flex flex-col overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-primary/5 text-primary px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase">Cocoa</div>
+<span class="text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                            Ends in 2d 18h
+                        </span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">15 Tons Fermented Cocoa Beans</h3>
+<div class="space-y-3 mb-6">
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Quantity Required</span>
+<span class="font-semibold text-on-surface">15,000 kg</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Target Price</span>
+<span class="font-semibold text-emerald-glow">$3.20 / kg</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-secondary">Origin Preference</span>
+<span class="font-semibold text-on-surface">Sulawesi / Sumatra</span>
+</div>
+</div>
+<div class="flex items-center gap-3 text-label-sm text-secondary bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-antique-base">
+<img alt="Buyer" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHQFMTSQMK9Wq6LbO_RgkctXqgZywalmxRo9IcXtxcoId1ZMl6rKHb_Sjg7p096aaAJ8swm6NeXHXCsjF_Bag0FhvE-NVG3lS4fu2gcLqEr1o-4nLLe_IH3dfTYzmrJRctEU7tOLzVjDUEApJ7_TMG1Wx80-r579ZbkslcYCD-02_-N0ki3sKHu_nB3OH-riQElxAaWni9bHaTwMi17EBAhzmRNvlTNQLhZCVzgEWcBdyaTn0cqIMF_rdq0Br_qiJ6fnPSxDzm-kNr"/>
+</div>
+<div>
+<p class="font-semibold text-on-surface">Swiss Choco Craft</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-emerald-glow" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Premium Buyer</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto border-t border-outline-variant p-4 bg-surface-container-lowest flex items-center justify-between">
+<span class="text-label-sm text-secondary">15 Active Bids</span>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-md hover:bg-emerald-glow hover:text-white transition-all active:scale-95">Place Bid</button>
+</div>
+</div>
+<!-- RFQ Card 6: Promo / System Card -->
+<div class="relative bg-primary overflow-hidden rounded-xl border border-outline p-8 flex flex-col justify-center text-center">
+<div class="absolute top-0 right-0 p-4 opacity-20 transform translate-x-4 -translate-y-4">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-primary mb-4">Export Guide: Spices</h3>
+<p class="font-body-sm text-on-primary/80 mb-6">Master the documentation requirements for UAE &amp; Saudi markets to win more bids.</p>
+<button class="bg-antique-base text-primary px-6 py-3 rounded-xl font-label-md hover:scale-105 transition-all shadow-lg mx-auto">Download Guide</button>
+</div>
+</div>
+<!-- Pagination / Load More -->
+<div class="mt-12 flex justify-center">
+<button class="flex items-center gap-2 text-primary font-label-md px-8 py-3 border border-primary rounded-xl hover:bg-primary/5 transition-all group">
+                Load More RFQs
+                <span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">expand_more</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="lg:ml-64 w-full py-12 px-margin-desktop bg-surface-container-high dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start gap-gutter mb-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Henzem</h2>
+<p class="font-body-sm text-body-sm text-secondary max-w-sm">Connecting Indonesia's best exporters with verified global buyers through transparency and advanced logistics.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-gutter w-full md:w-auto">
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-label-md text-primary">Platform</span>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Marketplace</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Seller Guide</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-label-md text-primary">Company</span>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-label-md text-primary">Support</span>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-label-md text-primary">Language</span>
+<div class="flex items-center gap-2 cursor-pointer text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">language</span>
+<span class="font-body-sm">ID / EN</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/30 flex flex-col sm:flex-row justify-between items-center gap-4">
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Henzem Global. Empowering Indonesian UMKM.</p>
+<div class="flex gap-6">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- FAB for Quick Actions (Suppressed on Details as per instruction, but relevant here on Dashboard) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-emerald-glow text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-[60] group">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+<span class="absolute right-full mr-4 bg-surface-container-lowest text-on-surface-variant px-4 py-2 rounded-xl text-label-md shadow-lg opacity-0 group-hover:opacity-100 whitespace-nowrap transition-all border border-outline-variant pointer-events-none">Create RFQ</span>
+</button>
+<script>
+        // Micro-interaction for cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Subtle lift animation handled by Tailwind classes but can add JS logic if needed
+            });
+        });
+
+        // Search bar interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('shadow-md');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('shadow-md');
+        });
+    </script>
+</body></html>

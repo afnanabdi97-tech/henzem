@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Henzem | Bridging Indonesian Agribusiness to the Global Market</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#d3e4fe",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#763300",
+                    "inverse-on-surface": "#eaf1ff",
+                    "primary-fixed-dim": "#8bd6b6",
+                    "tertiary-fixed": "#ffdbca",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#f8f9ff",
+                    "tertiary-fixed-dim": "#ffb68e",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-secondary-fixed-variant": "#474646",
+                    "on-tertiary-fixed": "#331200",
+                    "surface-container-highest": "#d3e4fe",
+                    "primary-container": "#065f46",
+                    "surface-container-low": "#eff4ff",
+                    "tertiary": "#662b00",
+                    "surface-dim": "#cbdbf5",
+                    "outline": "#6f7973",
+                    "outline-variant": "#bec9c2",
+                    "inverse-surface": "#213145",
+                    "secondary": "#5f5e5e",
+                    "earth-depth": "#444C38",
+                    "on-background": "#0b1c30",
+                    "surface-tint": "#1b6b51",
+                    "on-secondary": "#ffffff",
+                    "background": "#f8f9ff",
+                    "primary-fixed": "#a6f2d1",
+                    "antique-base": "#FAEBD7",
+                    "danger-clay": "#FF5335",
+                    "amber-accent": "#F59E0B",
+                    "on-surface-variant": "#3f4944",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-primary-fixed": "#002116",
+                    "on-primary-container": "#8bd6b7",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#e2dfde",
+                    "on-primary-fixed-variant": "#00513b",
+                    "on-tertiary-container": "#ffb78f",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "surface-container": "#e5eeff",
+                    "verification-blue": "#7CC0D8",
+                    "on-secondary-container": "#636262",
+                    "emerald-glow": "#10B981",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#004532",
+                    "on-error": "#ffffff",
+                    "on-surface": "#0b1c30",
+                    "surface-container-high": "#dce9ff",
+                    "inverse-primary": "#8bd6b6",
+                    "tertiary-container": "#8a3c00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "stack-lg": "24px",
+                    "margin-desktop": "40px",
+                    "stack-md": "12px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "stack-sm": "4px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .shimmer {
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="bg-surface border-b border-outline-variant dock-top full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-8">
+<img alt="Henzem Logo" class="h-10 w-auto object-contain" src="data:image/png;base64,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"/>
+<div class="hidden md:flex items-center gap-6">
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="#">Marketplace</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="#">Solutions</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="#">Trade Finance</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="#">Logistics</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex relative mr-4">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none w-64 transition-all" placeholder="Search commodities..." type="text"/>
+</div>
+<button class="font-label-md text-label-md text-primary px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg">Login</button>
+<button class="font-label-md text-label-md bg-primary text-on-primary px-6 py-2.5 rounded-lg hover:opacity-90 active:scale-95 transition-all shadow-sm">Get Started</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-transparent z-10"></div>
+<img class="w-full h-full object-cover object-center" data-alt="A cinematic, wide-angle shot of a sun-drenched Indonesian coffee plantation at dawn. Lush emerald green coffee trees laden with ripe red cherries stretch across rolling hills under a soft golden mist. The lighting is ethereal and premium, reflecting a high-end corporate agribusiness aesthetic with deep greens and warm earthy tones. The atmosphere is professional, serene, and abundant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7WQsW9wuFPyzfl7BFc6wt82qEtqk7gGYDxAcurD1f75-B5OTajq0aZkVnevvGMFzAg3BqmiFO6ZZTscYSekkkPHWOBJRd30bArDlMMlu7O5u5lRiEOdHklLO_Wo3TY6eaJ9gkd3aR__VBE-3XP73ne4U2hQJQJze3zl_APnCyLrIzLlVYWW5aO0uTRNhCseLPnSOZAw0s4Q2g3fgRzq304RpEmdIdHYS398u3G7eVHSnDxuFu44ATbd-qv0sSscqU28T3CrYD222I"/>
+</div>
+<div class="container mx-auto px-margin-desktop relative z-20 max-w-container-max">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary-fixed text-on-primary-fixed rounded-full mb-6">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Verified Export Partner</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-6 leading-tight">
+                        Bridging Indonesian Agribusiness to the <span class="text-primary">Global Market.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                        Empowering UMKM exporters with a high-touch trading platform designed for scale, transparency, and global trust.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-primary text-on-primary rounded-xl font-label-md text-label-md flex items-center gap-2 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                            Start Trading Now
+                            <span class="material-symbols-outlined">trending_flat</span>
+</button>
+<button class="px-8 py-4 bg-white border border-outline-variant text-on-surface rounded-xl font-label-md text-label-md flex items-center gap-2 hover:bg-surface-container transition-all">
+                            Explore Marketplace
+                        </button>
+</div>
+<div class="mt-12 flex items-center gap-8">
+<div>
+<p class="font-headline-md text-headline-md text-primary">500+</p>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Verified Sellers</p>
+</div>
+<div class="w-px h-10 bg-outline-variant"></div>
+<div>
+<p class="font-headline-md text-headline-md text-primary">$12M+</p>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Trade Volume</p>
+</div>
+<div class="w-px h-10 bg-outline-variant"></div>
+<div>
+<p class="font-headline-md text-headline-md text-primary">15+</p>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Countries</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-24 bg-surface">
+<div class="container mx-auto px-margin-desktop max-w-container-max">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">How it Works</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Our streamlined process ensures every transaction is secure, verified, and efficient from inquiry to delivery.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+<!-- Connector line for desktop -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-primary/10 via-primary/40 to-primary/10 -translate-y-12"></div>
+<div class="relative z-10 group">
+<div class="bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary transition-colors h-full flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">request_quote</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3 text-on-surface">1. RFQ</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Post your Request for Quotation or browse existing requirements from international buyers.</p>
+</div>
+</div>
+<div class="relative z-10 group">
+<div class="bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary transition-colors h-full flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">gavel</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3 text-on-surface">2. Bidding</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Engage in transparent bidding. Negotiate terms directly with verified exporters to get the best value.</p>
+</div>
+</div>
+<div class="relative z-10 group">
+<div class="bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary transition-colors h-full flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">handshake</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3 text-on-surface">3. Handover</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Finalize logistics and trade finance. Secure escrow payment and tracked international shipping.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Commodities (Bento Grid) -->
+<section class="py-24 bg-surface-container-low">
+<div class="container mx-auto px-margin-desktop max-w-container-max">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Featured Commodities</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Premium Indonesian exports sourced directly from origin.</p>
+</div>
+<button class="text-primary font-label-md text-label-md flex items-center gap-1 hover:gap-2 transition-all">
+                        View All Commodities <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="bento-grid">
+<!-- Big Card -->
+<div class="col-span-12 lg:col-span-8 group relative overflow-hidden rounded-3xl min-h-[400px]">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close-up macro photography of high-quality Indonesian Arabica coffee beans. The beans are rich, dark brown with a subtle oily sheen, displayed in a rustic wooden bowl. The lighting is dramatic and warm, highlighting the textures and premium nature of the produce. Deep forest green and golden amber accents define the color palette, suggesting luxury and authenticity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeaLVYKfRZeadpeekV7M8txPHA0H1jwLXkGLl8F54nrQzyn3clu1BEwO247ADA6_HOxNM21QTZGedXm_J-qNRVX9nELZ1FsUAh387rBdTQlWhNisUPGSp6d629_uz1sSzTYfHggR8KZm_S6evKp32zp5v7cug2P3JMZ6GQoK4qe7r9rbWJIWD7QpcgteYF_snw2NS5SfcyPh5lmM4zPxUn6qAqEc3aV1RTBWFyg0Tyc1sh0luqYz6HLNdYMJuIDI-AsOZaYnrdJ5UW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-10">
+<span class="inline-block px-3 py-1 bg-emerald-glow text-white rounded-full font-label-sm text-label-sm mb-4 w-fit">Top Export</span>
+<h3 class="font-headline-xl text-headline-xl text-white mb-2">Sumatra Mandheling Coffee</h3>
+<p class="text-white/80 font-body-md max-w-md">Renowned for its smooth body and earthy notes. Sourced from smallholder farmers in North Sumatra.</p>
+</div>
+</div>
+<!-- Small Card 1 -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 group relative overflow-hidden rounded-3xl min-h-[400px]">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="An artistic arrangement of various Indonesian spices including cloves, nutmeg, and cinnamon sticks on a dark stone surface. The spices are vibrant and richly colored, lit with sharp side lighting to emphasize their intricate textures. The mood is sophisticated and culinary, emphasizing the heritage of the Spice Islands. A professional, high-contrast digital look with deep earthy browns and warm yellows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsj62zXhti37XhyAj9CS3bGLdVXGeYES8FRjCv2zmv-lyGgy5dxBe-wlBlnkr6QvswoFA5YOsU6i6P193EBdrAzYslysjgLTN_TAzRESqI8-xx8y3KqXFR6yIvIs_1u25oCuFATO4_g8_dU8PbQebnNgZ5TjaRqmutiKqoYIYWFJSXxC9UQLE5L2pPEtvJH2B7INRcdHiRrT8csUU36Uy0xN8iZTgknJZtp-EIper2-QgvtSe5-LL0b6d9e1dR4UbcCGl2MqjTYvU-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+<h3 class="font-headline-md text-headline-md text-white mb-1">Organic Spices</h3>
+<p class="text-white/80 font-body-sm">Cloves, Nutmeg, and Mace from the Maluku Islands.</p>
+</div>
+</div>
+<!-- Small Card 2 -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 group relative overflow-hidden rounded-3xl min-h-[300px]">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A sun-bleached heap of high-grade Cashew nuts being dried on a woven mat in a tropical setting. The image uses high-key, natural lighting to create a clean and healthy aesthetic. Soft neutral tones of beige and cream dominate the scene, with lush tropical greenery blurred in the background. The style is modern, professional, and food-safe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmdFRj-HA7oNI-2Kv4UWfDiOLP4_ILD9A62UoPGYFYVSxXbWLN21_zqdWSwzGcJ2wHpRrJlFmAGlV5bbUoU5v3_2nt1XrGx5Bsxcv43aeGzotVhvHo8vU0s0e1F1OpiqH8Ih_iy5nAsQA7IqHeBMa0PSTVgl6uYvfAYhjnNAgFcUNLvRhyCAxq0ojJ952iYjUtmUvdeZZcYgqk8OME7WcxbTpmMwaiNBJ72C1wnqqjktUXOAjSmkIXN0Y-GYyLOrjf7WNSNzerDhE-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+<h3 class="font-headline-md text-headline-md text-white mb-1">Premium Cashews</h3>
+<p class="text-white/80 font-body-sm">Export-grade kernels from Southeast Sulawesi.</p>
+</div>
+</div>
+<!-- CTA Card -->
+<div class="col-span-12 lg:col-span-8 bg-primary-container p-10 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-emerald-glow/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+<div class="relative z-10">
+<h3 class="font-headline-lg text-headline-lg text-on-primary-container mb-4">Can't find what you're looking for?</h3>
+<p class="text-on-primary-container/80 font-body-md max-w-lg mb-0">Post a specific RFQ and let our network of 500+ verified Indonesian suppliers reach out to you with competitive quotes.</p>
+</div>
+<button class="relative z-10 whitespace-nowrap px-8 py-4 bg-antique-base text-primary font-label-md text-label-md rounded-xl hover:bg-white transition-all shadow-xl">
+                            Post New RFQ
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust & Security -->
+<section class="py-24 bg-surface overflow-hidden">
+<div class="container mx-auto px-margin-desktop max-w-container-max">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<div class="inline-block px-3 py-1 bg-verification-blue/10 text-verification-blue rounded-full font-label-sm text-label-sm mb-6">Built for Reliability</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Uncompromising Trust &amp; Security</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">We eliminate the risks of cross-border trade through a systematic trust framework that protects both buyers and sellers at every milestone.</p>
+<div class="space-y-6">
+<div class="flex gap-4 p-4 rounded-2xl hover:bg-surface-container transition-colors">
+<div class="shrink-0 w-12 h-12 bg-white shadow-sm border border-outline-variant rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1">Multi-Layer KYC</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Every exporter undergoes rigorous identity, legal, and operational verification before joining the platform.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-2xl hover:bg-surface-container transition-colors">
+<div class="shrink-0 w-12 h-12 bg-white shadow-sm border border-outline-variant rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">policy</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1">Trade Insurance</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Optional comprehensive cargo and credit insurance to safeguard your investments against unforeseen disruptions.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-2xl hover:bg-surface-container transition-colors">
+<div class="shrink-0 w-12 h-12 bg-white shadow-sm border border-outline-variant rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1">Escrow Protection</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Funds are held securely in escrow and only released when predefined delivery and quality milestones are met.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="relative glass-card p-8 rounded-3xl shadow-2xl border border-outline-variant">
+<div class="flex items-center justify-between mb-8">
+<h5 class="font-headline-md text-headline-md text-on-surface">Verification Status</h5>
+<span class="material-symbols-outlined text-primary">security</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface rounded-xl border border-emerald-glow/20">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-emerald-glow"></div>
+<span class="font-label-md text-label-md">Exporter License</span>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-glow flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">check_circle</span> Verified</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface rounded-xl border border-emerald-glow/20">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-emerald-glow"></div>
+<span class="font-label-md text-label-md">Warehouse Audit</span>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-glow flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">check_circle</span> Approved</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface rounded-xl border border-amber-accent/20">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-amber-accent"></div>
+<span class="font-label-md text-label-md">Insurance Certificate</span>
+</div>
+<span class="font-label-sm text-label-sm text-amber-accent flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">hourglass_empty</span> Pending</span>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant flex justify-center">
+<img class="w-full h-40 object-cover rounded-xl" data-alt="A clean, top-down view of professional trade documents being stamped with a blue 'VERIFIED' ink seal on a minimalist white desk. Beside the documents sits a high-end fountain pen and a glass of water. The lighting is bright and airy, communicating transparency and corporate professionalism. The style is modern and trust-focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq4p6LSl-VdhBuALunrSuxoml-6-jNs39LKVebVItFlCAEMMdSEeffr4ro4_97cvHx8NpbhFx30BivTCAlFkJif2wgM2KSNb31nwl6p6H5v2G6cMZPzwsT1eCvxExj3K9eJBZVfJDeBAykjNSJvJOaGyWnwmEkRBbOEN_reqvlo8XhdqNNvSaC19PdpVkNliQ_7Vme8Ubfc4ojRlFeBlVLdkTyEGmKBYQWVn9kryvhXmdVTsLNmGQ2W-oVMInsaSFaRnoTXGRxdl6S"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-surface-container-high relative overflow-hidden">
+<div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="container mx-auto px-margin-desktop max-w-container-max relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Partner Success Stories</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Hear from the global buyers and Indonesian exporters who are growing together on Henzem.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-white p-8 rounded-3xl shadow-sm border border-outline-variant flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="flex text-amber-accent mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-8 italic">"Henzem has completely transformed how we source spices from Indonesia. The transparency in bidding and the verification process gave us the confidence to scale our imports by 40%."</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img alt="Buyer Portrait" data-alt="A professional headshot of a middle-aged European business executive smiling warmly. He is wearing a tailored navy blazer and a crisp white shirt. The background is a blurred high-end office environment. The lighting is soft and flattering, emphasizing reliability and professional success." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNnMmqK6Q7oHzVz8yqef66wKKH1n-hbUVY0zmuquN8XKsUqY1AXMAB8frHZjniNcTRXNYhEzq2h5pfEB8nqKD9bV1-5iU5ozdFumGkm7meUWzBoWF_j83_YS76oqKApfK2LxNhE-fMwLvys3Mt69L98Ic-wmWLJyEtW1GR-W7Uy82jnfcu7z5XuKwYjCXce7OzeqjE6DtGiy6xGGTq4Ov1DBI-4clgHJwfyB2BYwKqsZpM8BfOtK0bL5-ggYINeR7AbmPt8q5dFtjb"/>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface">Markus Schmidt</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Global Sourcing Manager, SpiceHub Hamburg</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-8 rounded-3xl shadow-sm border border-outline-variant flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="flex text-amber-accent mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-8 italic">"As a medium-sized coffee exporter, finding international buyers was always a struggle. Henzem's platform leveled the playing field for us. The high-touch support is unmatched."</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img alt="Exporter Portrait" data-alt="A professional headshot of an Indonesian businessman in his 30s, looking confident and approachable. He is wearing a modern batik shirt with elegant patterns in deep green and gold. The lighting is bright and clear, reflecting a high-growth startup and premium agribusiness aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmeEQVKfdywTlEffdgjwq9IZt7Mxliv0Q2Xh6NlaZSZk_8S5OHhB9Z7iEO4NxMgxK0DD-XSB7gLShkNRQGajOgePmVdK3If4KjipIDx5kKevTPHL8iY6VEbejBf4WneWSNLWIs_J2WYeXQJ18pjfAj4YCpWMlJag7AaR-opUK7XPBn32euDaZLwp0Ud3ToX2OI6kl-JqNRWLAthdehatfvHBstfhjUgGEejwamSZK2QSVMX2u1jC07TDZOvIm-O1CPX07SIOOEsOMl"/>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface">Budi Santoso</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Founder, Java Highlands Exports</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-8 rounded-3xl shadow-sm border border-outline-variant flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="flex text-amber-accent mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-8 italic">"The logistics integration is what sets Henzem apart. Being able to track our shipments from a remote Indonesian port all the way to our warehouse in Tokyo is a game changer."</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img alt="Buyer Portrait" data-alt="A professional headshot of a female Japanese executive, looking focused and sophisticated. She has a neat hairstyle and is wearing a cream-colored minimalist blouse. The background is a clean, modern workspace. The aesthetic is precise, high-tech, and corporate, emphasizing efficiency and global logistics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGSvcxof1vO0mtMigqZGNXo42MZiQ8BuPl5iN_1LlhQ3VaKhU_08RJzzKZjb_iyxki3NhaHCGY81vKEldbPUnZ-ZchUYAjSgGv_0x8MZY8ERz0Fhxef-OD5CbxtCoJkkL0fjggjM724vSOrmovY62IpC20VZXPmuSG34hA80X5qdWeZ_Lj5dCPXZ4iS_UmXJ0CEdJWUTpiifdor6yFea6r4cjx-pG4_ZIJBPt8P2de5qPEGJVOIJNn33vqyvWBPL9eECGkALSxWO4-"/>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface">Akiko Tanaka</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Logistics Lead, Nippon Foods Intl.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-primary relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+</div>
+<div class="container mx-auto px-margin-desktop max-w-container-max relative z-10 text-center">
+<h2 class="font-headline-xl text-headline-xl text-on-primary mb-6">Ready to scale your global agribusiness?</h2>
+<p class="font-body-lg text-body-lg text-on-primary/80 mb-12 max-w-2xl mx-auto">Join the premium Indonesian trade ecosystem today. Whether you're a buyer looking for quality or a seller looking for growth, Henzem is your partner.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="px-10 py-5 bg-antique-base text-primary font-label-md text-label-md rounded-xl hover:bg-white transition-all shadow-2xl">
+                        Apply for Verified Membership
+                    </button>
+<button class="px-10 py-5 border border-on-primary/30 text-on-primary font-label-md text-label-md rounded-xl hover:bg-on-primary/10 transition-all">
+                        Schedule a Demo
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-desktop bg-surface-container-high">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<div class="lg:col-span-1">
+<img alt="Henzem Logo" class="h-10 w-auto mb-6" src="data:image/png;base64,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"/>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Empowering Indonesian UMKM through digital trade innovation and global market access.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">alternate_email</span>
+</a>
+</div>
+</div>
+<div>
+<h6 class="font-label-md text-label-md text-on-surface uppercase mb-6">Marketplace</h6>
+<ul class="space-y-4">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">All Commodities</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Featured Sellers</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Current RFQs</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Trade Stats</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-md text-label-md text-on-surface uppercase mb-6">Company</h6>
+<ul class="space-y-4">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">About Henzem</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Sustainability</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Career</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Press Kit</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-md text-label-md text-on-surface uppercase mb-6">Support</h6>
+<ul class="space-y-4">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Export Guides</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">© 2024 Henzem Global. Empowering Indonesian UMKM.</p>
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-2 text-on-surface-variant font-body-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-glow"></span>
+                        Platform Status: Operational
+                    </span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">language</span>
+<select class="bg-transparent border-none font-body-sm text-on-surface-variant p-0 focus:ring-0 cursor-pointer">
+<option>English</option>
+<option>Bahasa Indonesia</option>
+<option>日本語</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and subtle scroll effects
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            // Applying scroll animation classes
+            document.querySelectorAll('section > div').forEach(el => {
+                el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>

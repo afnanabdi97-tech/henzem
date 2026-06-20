@@ -1,0 +1,30 @@
+Dokumen Persyaratan Produk (PRD) - Proyek Henzem
+Platform Trading Ekspor Agrikultur D2C/B2B Berbasis Cloud
+
+# 1. Ringkasan Eksekutif & Visi Produk
+Henzem adalah platform D2C/B2B ekspor yang menjembatani UMKM Agrikultur Indonesia langsung dengan pembeli global. Menggunakan pendekatan "High-Touch" melalui peran Account Manager (AM) internal.
+
+# 2. Profil Pengguna
+- Seller (Eksportir UMKM): Produsen agrikultur Indonesia.
+- Buyer (Importir Global): Perusahaan/toko luar negeri mencari komoditas.
+- Admin / Account Manager (AM Henzem): Fasilitator dokumen, moderator, dan pengelola transaksi.
+
+# 3. Ruang Lingkup MVP
+- Sistem Akun & Profil Terverifikasi (KTP/NIB).
+- RFQ Board (Request for Quotation).
+- Bidding System (Proposal Harga).
+- Handover Otomatis ke WhatsApp (setelah Bid disetujui).
+- Portal Unggah Dokumen Ekspor (BL, Invoice, Packing List).
+- Admin Dashboard Komprehensif.
+
+# 4. Fitur Inti
+- Modul RFQ: Input kategori, spek, jumlah, harga target. Validasi admin diperlukan.
+- Modul Bidding: Seller kirim penawaran, Buyer accept/reject.
+- Modul Handover: Penugasan AM otomatis, link WhatsApp tergenerate.
+- Modul Dokumen: Upload file bukti (Convex Storage).
+- Admin Dashboard: Metrik utama, KYC Center, RFQ Moderation, Transaction Control (Kanban), Billing Management.
+
+# 5. Tech Stack
+- Next.js 14/15, Tailwind CSS, Shadcn/ui.
+- Convex.dev (Database, Storage, Auth sync).
+- Clerk (Authentication).
